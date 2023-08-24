@@ -29,7 +29,7 @@ yarn build
 
 ```html
 <script type="module">
-  import Chatbot from "https://cdn.jsdelivr.net/npm/.../dist/web.js";
+  import Chatbot from "https://cdn.jsdelivr.net/gh/WiceDe/WiceChatEmbed@1.0.2/dist/web.js";
   Chatbot.init({
     chatflowid: "YOUR API KEY",
     apiHost: "https://wmg.wice.de",
@@ -55,7 +55,7 @@ To enable full screen, add `margin: 0` to <code>body</code> style, and confirm y
 ```html
 <body style="margin: 0">
   <script type="module">
-    import Chatbot from "./web.js";
+    import Chatbot from "https://cdn.jsdelivr.net/gh/WiceDe/WiceChatEmbed@1.0.2/dist/web.js";
     Chatbot.initFull({
       chatflowid: "YOUR API KEY",
       apiHost: "https://wmg.wice.de",
