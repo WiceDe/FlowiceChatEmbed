@@ -9,10 +9,11 @@ async function getConfig(apiHost: string, apiKey: string) {
   try {
     const response = await fetch(apiHost+'/api/v1/config/'+apiKey);
     const data = await response.json();
-    return data;
+    if('config' in data) return data.config;
   } catch (error) {
     console.error('Error:', error);
   }
+  return {};
 }
 
 
