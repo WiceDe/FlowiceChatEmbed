@@ -2,7 +2,8 @@
 type BotProps = {
     chatflowid: string
     apiHost?: string
-    chatflowConfig?: Record<string, unknown>
+    chatflowConfig?: Record<string, unknown>,
+    theme: any
 }
 
 async function getConfig(apiHost: string, apiKey: string) {
@@ -22,9 +23,10 @@ export const initFull = async (props: BotProps & { id?: string }) => {
       ? document.getElementById(props.id)
       : document.querySelector('flowise-fullchatbot')
 
-    console.log('props', props);
+    const config = await getConfig(props.apiHost || '', props.chatflowid || '');
+    if(config && config.theme) props.theme = config.theme;
 
-    props.chatflowConfig = await getConfig(props.apiHost || '', props.chatflowid || '');
+    console.log('props', props);
 
     if (!fullElement) throw new Error('<flowise-fullchatbot> element not found.')
     Object.assign(fullElement, props)
@@ -33,9 +35,10 @@ export const initFull = async (props: BotProps & { id?: string }) => {
 export const init = async (props: BotProps) => {
     const element = document.createElement('flowise-chatbot')
 
-    console.log('props', props);
+    const config = await getConfig(props.apiHost || '', props.chatflowid || '');
+    if(config && config.theme) props.theme = config.theme;
 
-    props.chatflowConfig = await getConfig(props.apiHost || '', props.chatflowid || '');
+    console.log('props', props);
 
     Object.assign(element, props)
     document.body.appendChild(element)
