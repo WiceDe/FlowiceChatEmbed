@@ -5,7 +5,7 @@ declare const chatbot: {
         chatflowConfig?: Record<string, unknown> | undefined;
     } & {
         id?: string | undefined;
-    }) => void;
+    }) => Promise<void>;
     init: (props: {
         chatflowid: string;
         apiHost?: string | undefined;

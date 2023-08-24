@@ -5,7 +5,7 @@ type BotProps = {
 };
 export declare const initFull: (props: BotProps & {
     id?: string;
-}) => void;
+}) => Promise<void>;
 export declare const init: (props: BotProps) => Promise<void>;
 type Chatbot = {
     initFull: typeof initFull;
@@ -14,7 +14,7 @@ type Chatbot = {
 export declare const parseChatbot: () => {
     initFull: (props: BotProps & {
         id?: string;
-    }) => void;
+    }) => Promise<void>;
     init: (props: BotProps) => Promise<void>;
 };
 export declare const injectChatbotInWindow: (bot: Chatbot) => void;
