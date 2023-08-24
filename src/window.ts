@@ -5,6 +5,17 @@ type BotProps = {
     chatflowConfig?: Record<string, unknown>
 }
 
+async function getConfig(apiHost: string, apiKey: string) {
+  try {
+    const response = await fetch(apiHost+'/api/v1/config/'+apiKey);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+
 export const initFull = (props: BotProps & { id?: string }) => {
     const fullElement = props.id
       ? document.getElementById(props.id)
@@ -13,8 +24,13 @@ export const initFull = (props: BotProps & { id?: string }) => {
     Object.assign(fullElement, props)
 }
 
-export const init = (props: BotProps) => {
+export const init = async (props: BotProps) => {
     const element = document.createElement('flowise-chatbot')
+
+    console.log('props', props);
+
+    props.chatflowConfig = await getConfig(props.apiHost, props.chatflowid);
+
     Object.assign(element, props)
     document.body.appendChild(element)
 }

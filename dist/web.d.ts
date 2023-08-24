@@ -10,7 +10,7 @@ declare const chatbot: {
         chatflowid: string;
         apiHost?: string | undefined;
         chatflowConfig?: Record<string, unknown> | undefined;
-    }) => void;
+    }) => Promise<void>;
 };
 export default chatbot;
 //# sourceMappingURL=web.d.ts.map
