@@ -79,4 +79,4 @@ With `python fileServer.py` you can view the example page on your local machine.
 
 ## License
 
-Source code in this repository is made available under the [MIT License]https://github.com/WiceDe/FlowiceChatEmbed/blob/master/LICENSE.md).
+Source code in this repository is made available under the [MIT License]https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md).
