@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD030 -->
 
-# Wice Embed
+# Wice Chat Embed
 
 Javascript library to display the wice chatbot on your website
 
@@ -44,7 +44,7 @@ yarn build
   import Chatbot from "./web.js";
   Chatbot.initFull({
     chatflowid: "YOUR API KEY",
-    apiHost: "http://localhost:3000",
+    apiHost: "https://wmg.wice.de",
   });
 </script>
 <flowise-fullchatbot></flowise-fullchatbot>
@@ -58,7 +58,7 @@ To enable full screen, add `margin: 0` to <code>body</code> style, and confirm y
     import Chatbot from "./web.js";
     Chatbot.initFull({
       chatflowid: "YOUR API KEY",
-      apiHost: "http://localhost:3000",
+      apiHost: "https://wmg.wice.de",
       theme: {
         chatWindow: {
           // height: 700, don't set height
@@ -70,6 +70,12 @@ To enable full screen, add `margin: 0` to <code>body</code> style, and confirm y
 </body>
 ```
 Custom Configuration is automatically fetched from backend.
+
+### Example of chat
+
+In test.html you find an example of how to add the chat to a website.
+
+With `python fileServer.py` you can view the example page on your local machine.
 
 ## License
 
