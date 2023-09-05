@@ -240,6 +240,8 @@ export const Bot = (props: BotProps & { class?: string }) => {
 
     // eslint-disable-next-line solid/reactivity
     createEffect(async() => {
+        return false; // disable socket for now since we do not use it
+
         const { data } = await isStreamAvailableQuery({
             chatflowid: props.chatflowid,
             apiHost: props.apiHost,
