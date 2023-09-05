@@ -1,6 +1,6 @@
 import { Show, onMount } from 'solid-js'
 import { Avatar } from '../avatars/Avatar'
-import { Marked } from '@ts-stack/markdown'
+import { Marked, Renderer } from '@ts-stack/markdown'
 
 type Props = {
   message: string
@@ -8,12 +8,21 @@ type Props = {
   avatarSrc?: string
   backgroundColor?: string
   textColor?: string
+  linkColor?: string
 }
 
 const defaultBackgroundColor = '#f7f8ff'
 const defaultTextColor = '#303235'
+var linkColor = '#096bda';
 
-Marked.setOptions({ isNoP: true })
+class LinkRenderer extends Renderer {
+  override link(href: string, title: string, text: string) {
+    var link = Renderer.prototype.link.call(this, href, title, text);
+    return link.replace("<a",`<a style="${linkColor}" class="styled-link" `);
+  }
+}
+
+Marked.setOptions({ isNoP: true, renderer: new LinkRenderer })
 
 export const BotBubble = (props: Props) => {
   let botMessageEl: HTMLDivElement | undefined
@@ -22,6 +31,7 @@ export const BotBubble = (props: Props) => {
     if (botMessageEl) {
       botMessageEl.innerHTML = Marked.parse(props.message)
     }
+    if(props.linkColor) linkColor = props.linkColor;
   })
 
   return (
