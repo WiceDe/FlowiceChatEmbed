@@ -18,7 +18,7 @@ var linkColor = '#096bda';
 class LinkRenderer extends Renderer {
   override link(href: string, title: string, text: string) {
     var link = Renderer.prototype.link.call(this, href, title, text);
-    return link.replace("<a",`<a style="${linkColor}" class="styled-link" `);
+    return link.replace("<a",`<a style="color:${linkColor};" class="styled-link" `);
   }
 }
 

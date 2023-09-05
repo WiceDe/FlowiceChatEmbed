@@ -26,6 +26,7 @@ export type BotMessageTheme = {
     textColor?: string
     showAvatar?: boolean
     avatarSrc?: string
+    linkColor?: string
 }
 
 export type ChatWindowTheme = {

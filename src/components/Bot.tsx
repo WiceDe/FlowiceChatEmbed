@@ -325,6 +325,7 @@ export const Bot = (props: BotProps & { class?: string }) => {
                                             textColor={props.botMessage?.textColor}
                                             showAvatar={props.botMessage?.showAvatar}
                                             avatarSrc={props.botMessage?.avatarSrc}
+                                            linkColor={props.botMessage?.linkColor}
                                         />
                                     )}
                                     {message.type === 'userMessage' && loading() && index() === messages().length - 1 && (
