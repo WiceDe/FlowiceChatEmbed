@@ -11,6 +11,12 @@ const defaultButtonColor = '#3B81F6'
 const defaultIconColor = 'white'
 const defaultBottom = '20'
 const defaultRight = '20'
+const sizes = {
+  small: ' w-8 h-8',
+  medium: ' w-12 h-12',
+  large: ' w-16 h-16',
+  extraLarge: ' w-20 h-20',
+}
 
 export const BubbleButton = (props: Props) => {
     return (
@@ -19,7 +25,7 @@ export const BubbleButton = (props: Props) => {
             onClick={() => props.toggleBot()}
             class={
                 `fixed shadow-md rounded-full hover:scale-110 active:scale-95 transition-transform duration-200 flex justify-center items-center animate-fade-in` +
-                (props.size === 'large' ? ' w-16 h-16' : ' w-12 h-12')
+                ((props.size && props.size in sizes) ? sizes[props.size] : ' w-12 h-12')
             }
             style={{
                 'background-color': props.backgroundColor ?? defaultButtonColor,
