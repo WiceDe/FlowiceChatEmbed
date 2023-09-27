@@ -29,6 +29,7 @@ export type BotProps = {
     poweredByTextColor?: string
     badgeBackgroundColor?: string
     fontSize?: number
+    disabled?: boolean
 }
 
 const defaultWelcomeMessage = 'Hi there! How can I help?'

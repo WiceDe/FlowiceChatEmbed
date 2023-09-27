@@ -1,5 +1,6 @@
 export type BubbleParams = {
     theme?: BubbleTheme
+    disabled?: boolean
 }
 
 export type BubbleTheme = {

@@ -25,6 +25,14 @@ export const Bubble = (props: BubbleProps) => {
         isBotOpened() ? closeBot() : openBot()
     }
 
+    if (props.disabled) {
+      console.log('Wice Chatbot is disabled');
+      return(
+        <>
+        </>
+      )
+    }
+
     return (
         <>
             <style>{styles}</style>
