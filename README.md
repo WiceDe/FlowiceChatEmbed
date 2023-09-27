@@ -23,6 +23,11 @@ Build:
 yarn build
 ```
 
+## Force CDN Update
+By default, jsdelivr takes up to 7 days to deliver the newest release if pointing at latest, or up to 24 hours if pointed at a specific version. To shorten this period, the jsdelivr cache can be manually purged to force an immediate delivery of the newest version, using this interface:  
+
+[https://www.jsdelivr.com/tools/purge](https://www.jsdelivr.com/tools/purge)
+
 ## Embed in your HTML
 
 ### PopUp
