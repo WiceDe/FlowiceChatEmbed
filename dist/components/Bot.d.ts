@@ -17,6 +17,7 @@ export type BotProps = {
     badgeBackgroundColor?: string;
     fontSize?: number;
     disabled?: boolean;
+    usageTier?: string;
 };
 export declare const Bot: (props: BotProps & {
     class?: string;

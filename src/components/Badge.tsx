@@ -4,6 +4,7 @@ type Props = {
   botContainer: HTMLDivElement | undefined
   poweredByTextColor?: string
   badgeBackgroundColor?: string
+  usageTier?: string
 }
 
 const defaultTextColor = '#303235'
@@ -39,6 +40,23 @@ export const Badge = (props: Props) => {
   onCleanup(() => {
     if (observer) observer.disconnect()
   })
+
+  if(props.usageTier && props.usageTier === "3") {
+    return (
+      <span style={{
+        "font-size": '13px',
+        position: 'absolute',
+        bottom: 0,
+        padding: '10px',
+        margin: 'auto',
+        width: '100%',
+        "text-align": 'center',
+        color: props.poweredByTextColor ?? defaultTextColor,
+        "background-color": props.badgeBackgroundColor ?? '#ffffff'
+      }}>
+      </span>
+    )
+  }
 
   return (
     <span style={{

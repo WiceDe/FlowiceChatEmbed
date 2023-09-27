@@ -5,5 +5,6 @@ export const defaultBotProps: BubbleProps = {
     apiHost: undefined,
     chatflowConfig: undefined,
     theme: undefined,
-    disabled: false
+    disabled: false,
+    usageTier: '0',
 }

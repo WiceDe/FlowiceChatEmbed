@@ -5,6 +5,7 @@ type BotProps = {
     chatflowConfig?: Record<string, unknown>,
     theme: any
     disabled?: boolean
+    usageTier?: string
 }
 
 async function getConfig(apiHost: string, apiKey: string) {
@@ -27,6 +28,7 @@ export const initFull = async (props: BotProps & { id?: string }) => {
     const config = await getConfig(props.apiHost || '', props.chatflowid || '');
     if(config && config.theme) props.theme = config.theme;
     if(config && config.usage && config.usage.disabled) props.disabled = true;
+    if(config && config.usage && config.usage.usage_tier) props.usageTier = config.usage.usage_tier;
 
     if (!fullElement) throw new Error('<flowise-fullchatbot> element not found.')
     Object.assign(fullElement, props)
@@ -37,8 +39,8 @@ export const init = async (props: BotProps) => {
 
     const config = await getConfig(props.apiHost || '', props.chatflowid || '');
     if(config && config.theme) props.theme = config.theme;
-    if(config && config.theme) props.theme = config.theme;
     if(config && config.usage && config.usage.disabled) props.disabled = true;
+    if(config && config.usage && config.usage.usage_tier) props.usageTier = config.usage.usage_tier;
 
     Object.assign(element, props)
     document.body.appendChild(element)
