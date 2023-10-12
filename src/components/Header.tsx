@@ -3,7 +3,9 @@ import { onCleanup, onMount } from 'solid-js'
 type Props = {
   botContainer: HTMLDivElement | undefined
   headerTextColor?: string
-  HeaderBackgroundColor?: string
+  headerBackgroundColor?: string
+  headerText?: string
+  headerImageUrl?: string
   usageTier?: string
 }
 
@@ -41,35 +43,21 @@ export const Header = (props: Props) => {
     if (observer) observer.disconnect()
   })
 
-  if(props.usageTier && props.usageTier === "3") {
-    return (
-      <span style={{
-        "font-size": '13px',
-        position: 'absolute',
-        bottom: 0,
-        padding: '10px',
-        margin: 'auto',
-        width: '100%',
-        "text-align": 'center',
-        color: props.headerTextColor ?? defaultTextColor,
-        "background-color": props.HeaderBackgroundColor ?? '#ffffff'
-      }}>
-      </span>
-    )
-  }
+  // if(props.usageTier && props.usageTier === "3")
 
+  const headerText = (props.headerText)? props.headerText : 'Header Text goes here...';
   return (
     <span style={{
       "font-size": '13px',
       position: 'absolute',
-      bottom: 0,
+      top: 0,
       padding: '10px',
       margin: 'auto',
       width: '100%',
-      "text-align": 'center',
+      "text-align": 'left',
       color: props.headerTextColor ?? defaultTextColor,
-      "background-color": props.HeaderBackgroundColor ?? '#ffffff'
-    }}>Header Text goes here...
+      "background-color": props.headerBackgroundColor ?? '#ffffff'
+    }}>{props.headerImageUrl} {headerText}
     </span>
   )
 }

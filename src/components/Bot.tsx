@@ -29,6 +29,10 @@ export type BotProps = {
     textInput?: TextInputTheme
     poweredByTextColor?: string
     badgeBackgroundColor?: string
+    headerTextColor?: string
+    headerBackgroundColor?: string
+    headerImageUrl?: string
+    headerText?: string
     fontSize?: number
     disabled?: boolean
     usageTier?: string
@@ -309,9 +313,9 @@ export const Bot = (props: BotProps & { class?: string }) => {
     return (
         <>
             <div ref={botContainer} class={'relative flex w-full h-full text-base overflow-hidden bg-cover bg-center flex-col items-center chatbot-container ' + props.class}>
+                <Header usageTier={props.usageTier} headerText={props.headerText} headerImageUrl={props.headerImageUrl} headerBackgroundColor={props.headerBackgroundColor} headerTextColor={props.headerTextColor} botContainer={botContainer} />
                 <div class="flex w-full h-full justify-center">
                     <div style={{ "padding-bottom": '100px' }} ref={chatContainer} class="overflow-y-scroll min-w-full w-full min-h-full px-3 pt-10 relative scrollable-container chatbot-chat-view scroll-smooth">
-                        <Header usageTier={props.usageTier} headerBackgroundColor={props.headerBackgroundColor} headerTextColor={props.poweredByTextColor} botContainer={botContainer} />
                         <For each={[...messages()]}>
                             {(message, index) => (
                                 <>
@@ -361,7 +365,6 @@ export const Bot = (props: BotProps & { class?: string }) => {
                                         </For>
                                     </div>}
                                 </>
-                            <Badge usageTier={props.usageTier} badgeBackgroundColor={props.badgeBackgroundColor} poweredByTextColor={props.poweredByTextColor} botContainer={botContainer} />
                   )}
                         </For>
                     </div>
