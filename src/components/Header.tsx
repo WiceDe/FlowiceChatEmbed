@@ -45,7 +45,7 @@ export const Header = (props: Props) => {
 
   // if(props.usageTier && props.usageTier === "3")
 
-  const headerText = (props.headerText)? props.headerText : 'Header Text goes here...';
+  const headerText = (props.headerText)? props.headerText : 'Wice AI Chat';
   return (
     <span style={{
       "font-size": '13px',
