@@ -6,6 +6,7 @@ export type BubbleParams = {
 export type BubbleTheme = {
     chatWindow?: ChatWindowTheme
     button?: ButtonTheme
+    header?: HeaderTheme
 }
 
 export type TextInputTheme = {
@@ -49,4 +50,13 @@ export type ButtonTheme = {
     customIconSrc?: string
     bottom?: number
     right?: number
+}
+
+export type HeaderTheme = {
+  headerTextColor?: string
+  headerBackgroundColor?: string
+  headerImageUrl?: string
+  headerText?: string
+  headerContactLink?: string
+  mailButtonColor?: string
 }

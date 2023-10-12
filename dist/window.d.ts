@@ -5,11 +5,6 @@ type BotProps = {
     theme: any;
     disabled?: boolean;
     usageTier?: string;
-    headerTextColor?: string;
-    headerBackgroundColor?: string;
-    headerImageUrl?: string;
-    headerText?: string;
-    headerContactLink?: string;
     mailButtonColor?: string;
 };
 export declare const initFull: (props: BotProps & {

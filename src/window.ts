@@ -6,11 +6,6 @@ type BotProps = {
     theme: any,
     disabled?: boolean,
     usageTier?: string,
-    headerTextColor?: string,
-    headerBackgroundColor?: string,
-    headerImageUrl?: string,
-    headerText?: string,
-    headerContactLink?: string,
     mailButtonColor?: string,
 }
 
@@ -32,16 +27,7 @@ export const initFull = async (props: BotProps & { id?: string }) => {
       : document.querySelector('flowise-fullchatbot')
 
     const config = await getConfig(props.apiHost || '', props.chatflowid || '');
-    if(config && config.theme && config.theme.header) {
-      props.headerText = config.theme.header.headerText || false;
-      props.headerBackgroundColor = config.theme.header.headerBackgroundColor || false;
-      props.headerTextColor = config.theme.header.headerTextColor || false;
-      props.headerImageUrl = config.theme.header.headerImageUrl || false;
-      props.headerContactLink = config.theme.header.headerContactLink || false;
-      props.mailButtonColor = config.theme.header.mailButtonColor || false;
 
-      delete config.theme.header;
-    }
     if(config && config.theme) props.theme = config.theme;
     if(config && config.usage && config.usage.disabled) props.disabled = true;
     if(config && config.usage && config.usage.usage_tier) props.usageTier = config.usage.usage_tier;
@@ -54,16 +40,6 @@ export const init = async (props: BotProps) => {
     const element = document.createElement('flowise-chatbot')
 
     const config = await getConfig(props.apiHost || '', props.chatflowid || '');
-    if(config && config.theme && config.theme.header) {
-      props.headerText = config.theme.header.headerText || false;
-      props.headerBackgroundColor = config.theme.header.headerBackgroundColor || false;
-      props.headerTextColor = config.theme.header.headerTextColor || false;
-      props.headerImageUrl = config.theme.header.headerImageUrl || false;
-      props.headerContactLink = config.theme.header.headerContactLink || false;
-      props.mailButtonColor = config.theme.header.mailButtonColor || false;
-
-      delete config.theme.header;
-    }
     if(config && config.theme) props.theme = config.theme;
     if(config && config.usage && config.usage.disabled) props.disabled = true;
     if(config && config.usage && config.usage.usage_tier) props.usageTier = config.usage.usage_tier;

@@ -63,6 +63,12 @@ export const Bubble = (props: BubbleProps) => {
                         botMessage={bubbleProps.theme?.chatWindow?.botMessage}
                         userMessage={bubbleProps.theme?.chatWindow?.userMessage}
                         fontSize={bubbleProps.theme?.chatWindow?.fontSize}
+                        headerTextColor= {bubbleProps.theme?.header?.headerTextColor}
+                        headerBackgroundColor= {bubbleProps.theme?.header?.headerBackgroundColor}
+                        headerImageUrl= {bubbleProps.theme?.header?.headerImageUrl}
+                        headerText= {bubbleProps.theme?.header?.headerText}
+                        mailButtonColor= {bubbleProps.theme?.header?.mailButtonColor}
+                        headerContactLink= {bubbleProps.theme?.header?.headerContactLink}
                         chatflowid={props.chatflowid}
                         chatflowConfig={props.chatflowConfig}
                         usageTier={props.usageTier}
