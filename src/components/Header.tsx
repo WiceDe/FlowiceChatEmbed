@@ -67,8 +67,7 @@ export const Header = (props: Props) => {
       "text-align": 'left',
       color: props.headerTextColor ?? defaultTextColor,
       "background-color": props.headerBackgroundColor ?? '#70AD47'
-    }}>{headerImage}{headerText}
-    <a href=""><MailIcon color={props.mailButtonColor} class={'send-icon flex ' + (props.disableIcon ? 'hidden' : '')}/></a>
+    }}>{headerImage}{headerText}{headerContactLink}
     </span>
   )
 }
