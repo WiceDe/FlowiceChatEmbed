@@ -6,6 +6,12 @@ declare const chatbot: {
         theme: any;
         disabled?: boolean | undefined;
         usageTier?: string | undefined;
+        headerTextColor?: string | undefined;
+        headerBackgroundColor?: string | undefined;
+        headerImageUrl?: string | undefined;
+        headerText?: string | undefined;
+        headerContactLink?: string | undefined;
+        mailButtonColor?: string | undefined;
     } & {
         id?: string | undefined;
     }) => Promise<void>;
@@ -16,6 +22,12 @@ declare const chatbot: {
         theme: any;
         disabled?: boolean | undefined;
         usageTier?: string | undefined;
+        headerTextColor?: string | undefined;
+        headerBackgroundColor?: string | undefined;
+        headerImageUrl?: string | undefined;
+        headerText?: string | undefined;
+        headerContactLink?: string | undefined;
+        mailButtonColor?: string | undefined;
     }) => Promise<void>;
 };
 export default chatbot;
