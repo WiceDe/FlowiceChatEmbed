@@ -52,6 +52,9 @@ export const Header = (props: Props) => {
   const headerText = (props.headerText)? props.headerText : 'Wice AI Chat';
 
   const headerContactLink = (props.headerContactLink)? <a href="{props.headerContactLink}"><MailIcon color={props.mailButtonColor} class={'send-icon flex ' + (props.disableIcon ? 'hidden' : '')}/></a>: '';
+
+  const headerImage = (props.headerImageUrl)? <img src="{props.headerImageUrl}" style= {{'max-width': '200px', 'padding-right': '8px', width: 'auto', 'max-height': '40px', overflow: 'hidden', display: 'inline-block'}} />: '';
+
   return (
     <span style={{
       "font-size": '18px',
@@ -64,7 +67,7 @@ export const Header = (props: Props) => {
       "text-align": 'left',
       color: props.headerTextColor ?? defaultTextColor,
       "background-color": props.headerBackgroundColor ?? '#70AD47'
-    }}>{props.headerImageUrl} {headerText}
+    }}>{headerImage}{headerText}
     <a href=""><MailIcon color={props.mailButtonColor} class={'send-icon flex ' + (props.disableIcon ? 'hidden' : '')}/></a>
     </span>
   )
