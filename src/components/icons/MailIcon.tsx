@@ -1,7 +1,7 @@
 import { JSX } from 'solid-js/jsx-runtime'
 const defaultButtonColor = '#3B81F6'
 export const MailIcon = (props: JSX.SvgSVGAttributes<SVGSVGElement>) => (
-<svg version="1.1" viewBox="0 0 250 250" width='36px' xmlns="http://www.w3.org/2000/svg" style={{ fill: props.color ?? defaultButtonColor, position: 'absolute', right: '8px', top: '1px' }}>
+<svg version="1.1" viewBox="0 0 250 250" width='36px' xmlns="http://www.w3.org/2000/svg" style={{ fill: props.color ?? defaultButtonColor, position: 'absolute', right: '8px', top: '4px' }}>
 <g transform="translate(-231.54,-375.82)">
 <g transform="matrix(3.8189 0 0 3.8189 -1398.1 -1597.5)" fill="#fff">
 <g transform="translate(-560.19,271.89)" fill="#fff">
