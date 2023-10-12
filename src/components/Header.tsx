@@ -9,7 +9,7 @@ type Props = {
   usageTier?: string
 }
 
-const defaultTextColor = '#303235'
+const defaultTextColor = '#ffffff'; //'#303235'
 
 export const Header = (props: Props) => {
   let liteHeader: HTMLAnchorElement | undefined
@@ -48,7 +48,8 @@ export const Header = (props: Props) => {
   const headerText = (props.headerText)? props.headerText : 'Wice AI Chat';
   return (
     <span style={{
-      "font-size": '13px',
+      "font-size": '18px',
+      "font-weight": '700',
       position: 'relative',
       top: 0,
       padding: '10px',
