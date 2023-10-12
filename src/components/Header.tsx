@@ -49,14 +49,14 @@ export const Header = (props: Props) => {
   return (
     <span style={{
       "font-size": '13px',
-      position: 'absolute',
+      position: 'relative',
       top: 0,
       padding: '10px',
       margin: 'auto',
       width: '100%',
       "text-align": 'left',
       color: props.headerTextColor ?? defaultTextColor,
-      "background-color": props.headerBackgroundColor ?? '#ffffff'
+      "background-color": props.headerBackgroundColor ?? '#70AD47'
     }}>{props.headerImageUrl} {headerText}
     </span>
   )
