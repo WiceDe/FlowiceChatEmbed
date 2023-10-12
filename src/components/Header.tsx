@@ -1,11 +1,15 @@
 import { onCleanup, onMount } from 'solid-js'
 
+import { MailIcon } from './icons'
+
 type Props = {
   botContainer: HTMLDivElement | undefined
   headerTextColor?: string
   headerBackgroundColor?: string
   headerText?: string
   headerImageUrl?: string
+  mailButtonColor?: string
+  headerContactLink?: string
   usageTier?: string
 }
 
@@ -46,6 +50,8 @@ export const Header = (props: Props) => {
   // if(props.usageTier && props.usageTier === "3")
 
   const headerText = (props.headerText)? props.headerText : 'Wice AI Chat';
+
+  const headerContactLink = (props.headerContactLink)? <a href="{props.headerContactLink}"><MailIcon color={props.mailButtonColor} class={'send-icon flex ' + (props.disableIcon ? 'hidden' : '')}/></a>: '';
   return (
     <span style={{
       "font-size": '18px',
@@ -59,6 +65,7 @@ export const Header = (props: Props) => {
       color: props.headerTextColor ?? defaultTextColor,
       "background-color": props.headerBackgroundColor ?? '#70AD47'
     }}>{props.headerImageUrl} {headerText}
+    <a href=""><MailIcon color={props.mailButtonColor} class={'send-icon flex ' + (props.disableIcon ? 'hidden' : '')}/></a>
     </span>
   )
 }

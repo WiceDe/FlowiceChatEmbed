@@ -4,6 +4,8 @@ type Props = {
     headerBackgroundColor?: string;
     headerText?: string;
     headerImageUrl?: string;
+    mailButtonColor?: string;
+    headerContactLink?: string;
     usageTier?: string;
 };
 export declare const Header: (props: Props) => import("solid-js").JSX.Element;

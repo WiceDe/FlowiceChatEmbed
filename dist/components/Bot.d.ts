@@ -19,6 +19,8 @@ export type BotProps = {
     headerBackgroundColor?: string;
     headerImageUrl?: string;
     headerText?: string;
+    mailButtonColor?: string;
+    headerContactLink?: string;
     fontSize?: number;
     disabled?: boolean;
     usageTier?: string;
