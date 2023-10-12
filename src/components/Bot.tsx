@@ -7,6 +7,7 @@ import { LoadingBubble } from './bubbles/LoadingBubble'
 import { SourceBubble } from './bubbles/SourceBubble'
 import { BotMessageTheme, TextInputTheme, UserMessageTheme } from '@/features/bubble/types'
 import { Badge } from './Badge'
+import { Header } from './Header'
 import socketIOClient from 'socket.io-client'
 import { Popup } from '@/features/popup'
 
@@ -310,6 +311,7 @@ export const Bot = (props: BotProps & { class?: string }) => {
             <div ref={botContainer} class={'relative flex w-full h-full text-base overflow-hidden bg-cover bg-center flex-col items-center chatbot-container ' + props.class}>
                 <div class="flex w-full h-full justify-center">
                     <div style={{ "padding-bottom": '100px' }} ref={chatContainer} class="overflow-y-scroll min-w-full w-full min-h-full px-3 pt-10 relative scrollable-container chatbot-chat-view scroll-smooth">
+                        <Header usageTier={props.usageTier} headerBackgroundColor={props.headerBackgroundColor} headerTextColor={props.poweredByTextColor} botContainer={botContainer} />
                         <For each={[...messages()]}>
                             {(message, index) => (
                                 <>
@@ -359,7 +361,8 @@ export const Bot = (props: BotProps & { class?: string }) => {
                                         </For>
                                     </div>}
                                 </>
-                            )}
+                            <Badge usageTier={props.usageTier} badgeBackgroundColor={props.badgeBackgroundColor} poweredByTextColor={props.poweredByTextColor} botContainer={botContainer} />
+                  )}
                         </For>
                     </div>
                     <TextInput
